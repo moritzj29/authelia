@@ -22,6 +22,7 @@ notifier:
     username: test
     password: password
     sender: admin@example.com
+    from: "Authelia <admin@example.com>"
     identifier: localhost
     subject: "[Authelia] {title}"
     startup_check_address: test@authelia.com
@@ -103,8 +104,20 @@ required: yes
 {: .label .label-config .label-red }
 </div>
 
-The address sent in the FROM header for the email. Basically who the email appears to come from. It should be noted
-that some SMTP servers require the username provided to have access to send from the specific address listed here.
+The address sent in the MAIL FROM header for the email. Basically the mail adress the email appears to come from. It
+should be noted that some SMTP servers require the username provided to have access to send from the specific address
+listed here.
+
+### from
+<div markdown="1">
+type: string
+{: .label .label-config .label-purple } 
+required: yes
+{: .label .label-config .label-red }
+</div>
+
+The address sent in the FROM header for the email. Basically who the email appears to come from. In contrast to `{sender}`
+the name can be chosen freely in most cases. Often it is required to include the email adress in angle brackets.
 
 ### identifier
 <div markdown="1">

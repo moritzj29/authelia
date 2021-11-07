@@ -138,7 +138,7 @@ func (n *SMTPNotifier) compose(recipient, subject, body, htmlBody string) error 
 	now := time.Now()
 
 	msg := "Date:" + now.Format(rfc5322DateTimeLayout) + "\n" +
-		"From: " + n.configuration.Sender + "\n" +
+		"From: " + n.configuration.From + "\n" +
 		"To: " + recipient + "\n" +
 		"Subject: " + subject + "\n" +
 		"MIME-version: 1.0\n" +
